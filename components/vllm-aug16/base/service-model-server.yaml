@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: vllm-aug16-model-server
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: vllm-aug16-model-server
+  name: vllm-aug16-model-server
+spec:
+  ports:
+  - port: 8001
+    protocol: TCP
+    targetPort: 8001
+  selector:
+    app.kubernetes.io/instance: vllm-aug16-model-server
